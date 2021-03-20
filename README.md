@@ -50,7 +50,7 @@ The `PageTypePageTemplateFilter` is simplest if your Page Templates follow some 
 In the example below, `Home Page (Default)` will match the filter and be allowed for selection for `Sandbox.HomePage`
 Page Types, but `Home Page (Featured)` does not have an Identifier (`Sandbox_PageTemplate_HomePage_Featured`)
 that matches the prefix of `Sandbox.HomePage_`, so it will not be displayed for selection for
-`Sandbox.HomePage` Page Types. It would need to be changed to `Sandbox.HomePage_Featured` to match the default filter.
+`Sandbox.HomePage` Page Types. It would need to be changed to `Sandbox.HomePage_Featured` to match the default filter, which follows the pattern of matching Page Templates with a Identifier prefix of `$"{PageTypeClassName}_"`.
 
 ```csharp
 [assembly: RegisterPageTemplate(
@@ -71,7 +71,7 @@ public class HomePageTemplateFilter : PageTypePageTemplateFilter
 }
 ```
 
-The filter can be override to allow you to match however you would like and has a signature of:
+The filter can be overridden to allow you to match however you would like. It has a signature of:
 
 ```csharp
 Func<PageTemplateDefinition, PageTemplateFilterContext, string, bool> PageTemplateFilterBy
