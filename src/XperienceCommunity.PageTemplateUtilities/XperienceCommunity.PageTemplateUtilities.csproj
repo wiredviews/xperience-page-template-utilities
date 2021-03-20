@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>
+      A set of utilities to help filter and register Page Templates in a Kentico Xperience 13.0+ application
+    </Description>
   </PropertyGroup>
 
   <ItemGroup>
