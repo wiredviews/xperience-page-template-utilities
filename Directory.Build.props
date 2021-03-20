@@ -8,6 +8,12 @@
     <Trademark>$(Company)™</Trademark>
     <Product>XperienceCommunity.PageTemplateUtilities</Product>
     <VersionPrefix>1.0.0</VersionPrefix>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>$(Product)</Title>
+    <PackageProjectUrl>https://github.com/wiredviews/xperience-page-template-utilities</PackageProjectUrl>
+    <PackageIcon>wv-logo.png</PackageIcon>
+    <PackageTags>xperience;kentico;mvc;aspnetcore</PackageTags>
+    <PackageReleaseNotes>https://github.com/wiredviews/xperience-page-template-utilities/releases</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>

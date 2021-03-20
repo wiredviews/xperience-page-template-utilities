@@ -16,4 +16,8 @@
     <PackageReference Include="Scrutor" Version="3.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\images\wv-logo.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
 </Project>
