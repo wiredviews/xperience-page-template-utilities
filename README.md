@@ -6,7 +6,7 @@ Utilities to help quickly create and register MVC Page Templates in Kentico Xper
 
 ## Dependencies
 
-This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is designed to be used with .NET Core / .NET 5 Console applications integrated with Kentico Xperience 13.0.
+This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is designed to be used with .NET Core / .NET 5 applications integrated with Kentico Xperience 13.0.
 
 ## How to Use?
 
@@ -22,7 +22,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
    [assembly: RegisterPageTemplate(
        "Sandbox.HomePage_Default",
        "Home Page (Default)",
-       typeof(BasicContentPageTemplateProperties),
+       typeof(HomePageTemplateProperties),
        "~/Features/Home/Sandbox.HomePage_Default.cshtml")]
 
    public class HomePageTemplateFilter : PageTypePageTemplateFilter
@@ -56,13 +56,13 @@ that matches the prefix of `Sandbox.HomePage_`, so it will not be displayed for 
 [assembly: RegisterPageTemplate(
     "Sandbox.HomePage_Default",
     "Home Page (Default)",
-    typeof(BasicContentPageTemplateProperties),
+    typeof(HomePageTemplateProperties),
     "~/Features/Home/Sandbox.HomePage_Default.cshtml")]
 
 [assembly: RegisterPageTemplate(
     "Sandbox_PageTemplate_HomePage_Featured",
     "Home Page (Featured)",
-    typeof(BasicContentPageTemplateProperties),
+    typeof(HomePageTemplateProperties),
     "~/Features/Home/Sandbox_HomePage_Featured.cshtml")]
 
 public class HomePageTemplateFilter : PageTypePageTemplateFilter
@@ -96,4 +96,5 @@ but at that point it's probably best to implement the `IPageTemplateFilter` dire
 
 ### Kentico Xperience
 
+- [Kentico Xperience Design Patterns: MVC is Dead, Long Live PTVC](https://dev.to/seangwright/kentico-xperience-design-patterns-mvc-is-dead-long-live-ptvc-4635#building-pages-with-page-templates)
 - [Filtering Page Templates](https://docs.xperience.io/developing-websites/page-builder-development/developing-page-templates/filtering-page-templates)
