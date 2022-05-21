@@ -92,6 +92,15 @@ public class HomePageTemplateFilter : PageTypePageTemplateFilter
 We could even skip using the `className` entirely and match against the `definition` or `context` with some hardcoded values,
 but at that point it's probably best to implement the `IPageTemplateFilter` directly.
 
+## Contributing
+
+To build this project, you must have v6.0.300 or higher
+of the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed.
+
+If you've found a bug or have a feature request, please [open an issue](https://github.com/wiredviews/xperience-page-template-utilities/issues/new) on GitHub.
+
+If you'd like to make a contribution, you can create a [PR on GitHub](https://github.com/wiredviews/xperience-page-template-utilities/compare).
+
 ## References
 
 ### Kentico Xperience
