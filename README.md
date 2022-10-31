@@ -92,6 +92,31 @@ public class HomePageTemplateFilter : PageTypePageTemplateFilter
 We could even skip using the `className` entirely and match against the `definition` or `context` with some hardcoded values,
 but at that point it's probably best to implement the `IPageTemplateFilter` directly.
 
+## Troubleshooting
+
+### InvalidOperationException: The view on path `'~/Views/Shared/PageTypes/<ClassName>.cshtml'` could not be found and there is no page template registered for selected page
+
+#### Live Site
+
+This error is caused by the `CMS_Document.DocumentPageTemplateConfiguration` column not being populated for the Page you are trying to display.
+
+`'~/Views/Shared/PageTypes/<ClassName>.cshtml'` is the default path for Basic ("Route-to-View") [Content Tree Routing](https://docs.xperience.io/developing-websites/implementing-routing/content-tree-based-routing/setting-up-content-tree-based-routing#Settingupcontenttreebasedrouting-BasicSettingupbasicrouting). Xperience uses this View path when no `[RegisterPageRoute]` attributes are found and the Page has no Page Template configuration.
+
+If this error occurs on the Live Site, you need to update this column with a value that looks like the following:
+
+```json
+{
+  "identifier": "<PageTemplateIdentifier>",
+  "properties": {}
+}
+```
+
+You can expose the `DocumentPageTemplateConfiguration` column in your Page "Content" tab by [adding it as a Page field to the Page's Page Type](https://docs.xperience.io/developing-websites/defining-website-content-structure/managing-page-types/creating-page-types#Creatingpagetypes-Step4–Fields) using a Text Area Form Control. After you add the value (and publish the Page if it's under workflow) you can remove the field from the Page Type.
+
+#### Administration
+
+If this error _only_ appears when trying to view the Page in the Page Builder, it means you have [Page versioning enabled](https://docs.xperience.io/x/9Q_RBg) and the value of the Page's "Document" fields in the `CMS_VersionHistory` table do not have a populated `DocumentPageTemplateConfiguration`. You should follow the steps in [the Live Site instructions](#live-site) and Save/Publish the latest version of the Page with the `DocumentPageTemplateConfiguration` populated.
+
 ## Contributing
 
 To build this project, you must have v6.0.300 or higher
